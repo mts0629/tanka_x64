@@ -102,22 +102,22 @@ Disassembly of section .text:
 
 0000000000001129 <main>:
     1129:	50                   	push   %rax
-    112a:	6a 03                	push   $0x3
-    112c:	31 ff                	xor    %edi,%edi
-    112e:	5a                   	pop    %rdx
-    112f:	89 f8                	mov    %edi,%eax
-    1131:	48 89 e6             	mov    %rsp,%rsi
-    1134:	0f 05                	syscall 
-    1136:	58                   	pop    %rax
-    1137:	00 e0                	add    %ah,%al
-    1139:	2c 30                	sub    $0x30,%al
-    113b:	50                   	push   %rax
-    113c:	ff c7                	inc    %edi
-    113e:	89 fa                	mov    %edi,%edx
-    1140:	89 f8                	mov    %edi,%eax
-    1142:	0f 05                	syscall 
-    1144:	58                   	pop    %rax
-    1145:	31 c0                	xor    %eax,%eax
+    112a:	31 ff                	xor    %edi,%edi
+    112c:	b2 03                	mov    $0x3,%dl
+    112e:	89 f8                	mov    %edi,%eax
+    1130:	48 89 e6             	mov    %rsp,%rsi
+    1133:	0f 05                	syscall 
+    1135:	58                   	pop    %rax
+    1136:	00 e0                	add    %ah,%al
+    1138:	2c 30                	sub    $0x30,%al
+    113a:	50                   	push   %rax
+    113b:	ff c7                	inc    %edi
+    113d:	89 fa                	mov    %edi,%edx
+    113f:	89 f8                	mov    %edi,%eax
+    1141:	0f 05                	syscall 
+    1143:	58                   	pop    %rax
+    1144:	31 c0                	xor    %eax,%eax
+    1146:	90                   	nop
     1147:	c3                   	ret    
 
 Disassembly of section .fini:
