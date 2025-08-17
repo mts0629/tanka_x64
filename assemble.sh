@@ -11,7 +11,6 @@ assemble() {
     gcc ${src} -o ./bin/${fname} && \
     ./bin/${fname} && \
     objdump -d ./bin/${fname} > ./disassembly/${fname}.d
-
 }
 
 assemble $1

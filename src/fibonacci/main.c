@@ -1,17 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define N 8
 
 void fibonacci(int num, int *array);
 
-int main(void) {
-    int buf[N];
+int main(int argc, char *argv[]) {
+    int n = atoi(argv[1]);
 
-    fibonacci(N, buf);
+    int *buf = malloc(sizeof(int) * n);
 
-    for (int i = 0; i < N; ++i) {
+    fibonacci(n, buf);
+
+    for (int i = 0; i < n; ++i) {
         printf("%d\n", buf[i]);
     }
+
+    free(buf);
 
     return 0;
 }
