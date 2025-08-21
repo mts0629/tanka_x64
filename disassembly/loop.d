@@ -110,24 +110,27 @@ Disassembly of section .text:
     113a:	57                   	push   %rdi
     113b:	5b                   	pop    %rbx
     113c:	50                   	push   %rax
-    113d:	68 25 64 0a 00       	push   $0xa6425
-    1142:	53                   	push   %rbx
-    1143:	5e                   	pop    %rsi
-    1144:	54                   	push   %rsp
-    1145:	5f                   	pop    %rdi
-    1146:	e8 e5 fe ff ff       	call   1030 <printf@plt>
-    114b:	ff cb                	dec    %ebx
-    114d:	75 f3                	jne    1142 <main+0x9>
-    114f:	58                   	pop    %rax
-    1150:	58                   	pop    %rax
-    1151:	31 c0                	xor    %eax,%eax
-    1153:	5b                   	pop    %rbx
-    1154:	c3                   	ret    
+    113d:	90                   	nop
+    113e:	68 25 64 0a 00       	push   $0xa6425
+    1143:	ff cb                	dec    %ebx
+    1145:	74 0c                	je     1153 <main+0x1a>
+    1147:	53                   	push   %rbx
+    1148:	5e                   	pop    %rsi
+    1149:	54                   	push   %rsp
+    114a:	5f                   	pop    %rdi
+    114b:	e8 e0 fe ff ff       	call   1030 <printf@plt>
+    1150:	90                   	nop
+    1151:	eb f0                	jmp    1143 <main+0xa>
+    1153:	58                   	pop    %rax
+    1154:	58                   	pop    %rax
+    1155:	31 c0                	xor    %eax,%eax
+    1157:	5b                   	pop    %rbx
+    1158:	c3                   	ret    
 
 Disassembly of section .fini:
 
-0000000000001158 <_fini>:
-    1158:	f3 0f 1e fa          	endbr64 
-    115c:	48 83 ec 08          	sub    $0x8,%rsp
-    1160:	48 83 c4 08          	add    $0x8,%rsp
-    1164:	c3                   	ret    
+000000000000115c <_fini>:
+    115c:	f3 0f 1e fa          	endbr64 
+    1160:	48 83 ec 08          	sub    $0x8,%rsp
+    1164:	48 83 c4 08          	add    $0x8,%rsp
+    1168:	c3                   	ret    
