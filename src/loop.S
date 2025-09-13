@@ -20,11 +20,10 @@ main:
     pop %rdi
     call printf
     nop
-
     jmp 1b
 2:
     pop %rax
     pop %rax
-    xor %eax, %eax
     pop %rbx
+    nop
     ret

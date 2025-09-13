@@ -123,14 +123,14 @@ Disassembly of section .text:
     1151:	eb f0                	jmp    1143 <main+0xa>
     1153:	58                   	pop    %rax
     1154:	58                   	pop    %rax
-    1155:	31 c0                	xor    %eax,%eax
-    1157:	5b                   	pop    %rbx
-    1158:	c3                   	ret    
+    1155:	5b                   	pop    %rbx
+    1156:	90                   	nop
+    1157:	c3                   	ret    
 
 Disassembly of section .fini:
 
-000000000000115c <_fini>:
-    115c:	f3 0f 1e fa          	endbr64 
-    1160:	48 83 ec 08          	sub    $0x8,%rsp
-    1164:	48 83 c4 08          	add    $0x8,%rsp
-    1168:	c3                   	ret    
+0000000000001158 <_fini>:
+    1158:	f3 0f 1e fa          	endbr64 
+    115c:	48 83 ec 08          	sub    $0x8,%rsp
+    1160:	48 83 c4 08          	add    $0x8,%rsp
+    1164:	c3                   	ret    
