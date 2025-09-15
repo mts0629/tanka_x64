@@ -111,19 +111,19 @@ Disassembly of section .text:
     113b:	5b                   	pop    %rbx
     113c:	31 c0                	xor    %eax,%eax
     113e:	50                   	push   %rax
-    113f:	68 25 64 0a 00       	push   $0xa6425
+    113f:	68 68 65 79 0a       	push   $0xa796568
     1144:	90                   	nop
     1145:	ff cb                	dec    %ebx
-    1147:	74 0b                	je     1154 <main+0x1b>
-    1149:	53                   	push   %rbx
-    114a:	5e                   	pop    %rsi
-    114b:	54                   	push   %rsp
-    114c:	5f                   	pop    %rdi
-    114d:	e8 de fe ff ff       	call   1030 <printf@plt>
-    1152:	eb f1                	jmp    1145 <main+0xc>
+    1147:	74 0a                	je     1153 <main+0x1a>
+    1149:	54                   	push   %rsp
+    114a:	5f                   	pop    %rdi
+    114b:	e8 e0 fe ff ff       	call   1030 <printf@plt>
+    1150:	90                   	nop
+    1151:	eb f2                	jmp    1145 <main+0xc>
+    1153:	58                   	pop    %rax
     1154:	58                   	pop    %rax
-    1155:	58                   	pop    %rax
-    1156:	5b                   	pop    %rbx
+    1155:	5b                   	pop    %rbx
+    1156:	90                   	nop
     1157:	c3                   	ret    
 
 Disassembly of section .fini:
