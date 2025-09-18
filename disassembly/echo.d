@@ -16,13 +16,13 @@ Disassembly of section .init:
 
 Disassembly of section .plt:
 
-0000000000001020 <printf@plt-0x10>:
+0000000000001020 <puts@plt-0x10>:
     1020:	ff 35 9a 2f 00 00    	push   0x2f9a(%rip)        # 3fc0 <_GLOBAL_OFFSET_TABLE_+0x8>
     1026:	ff 25 9c 2f 00 00    	jmp    *0x2f9c(%rip)        # 3fc8 <_GLOBAL_OFFSET_TABLE_+0x10>
     102c:	0f 1f 40 00          	nopl   0x0(%rax)
 
-0000000000001030 <printf@plt>:
-    1030:	ff 25 9a 2f 00 00    	jmp    *0x2f9a(%rip)        # 3fd0 <printf@GLIBC_2.2.5>
+0000000000001030 <puts@plt>:
+    1030:	ff 25 9a 2f 00 00    	jmp    *0x2f9a(%rip)        # 3fd0 <puts@GLIBC_2.2.5>
     1036:	68 00 00 00 00       	push   $0x0
     103b:	e9 e0 ff ff ff       	jmp    1020 <_init+0x20>
 
@@ -106,20 +106,22 @@ Disassembly of section .text:
     1134:	e9 77 ff ff ff       	jmp    10b0 <register_tm_clones>
 
 0000000000001139 <main>:
-    1139:	57                   	push   %rdi
-    113a:	5e                   	pop    %rsi
-    113b:	68 25 64 0a 00       	push   $0xa6425
-    1140:	54                   	push   %rsp
-    1141:	5f                   	pop    %rdi
-    1142:	e8 e9 fe ff ff       	call   1030 <printf@plt>
-    1147:	58                   	pop    %rax
-    1148:	31 c0                	xor    %eax,%eax
-    114a:	c3                   	ret    
+    1139:	55                   	push   %rbp
+    113a:	48 89 e5             	mov    %rsp,%rbp
+    113d:	48 83 ec 10          	sub    $0x10,%rsp
+    1141:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+    1145:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    1149:	48 8b 40 08          	mov    0x8(%rax),%rax
+    114d:	48 89 c7             	mov    %rax,%rdi
+    1150:	e8 db fe ff ff       	call   1030 <puts@plt>
+    1155:	31 c0                	xor    %eax,%eax
+    1157:	c9                   	leave  
+    1158:	c3                   	ret    
 
 Disassembly of section .fini:
 
-000000000000114c <_fini>:
-    114c:	f3 0f 1e fa          	endbr64 
-    1150:	48 83 ec 08          	sub    $0x8,%rsp
-    1154:	48 83 c4 08          	add    $0x8,%rsp
-    1158:	c3                   	ret    
+000000000000115c <_fini>:
+    115c:	f3 0f 1e fa          	endbr64 
+    1160:	48 83 ec 08          	sub    $0x8,%rsp
+    1164:	48 83 c4 08          	add    $0x8,%rsp
+    1168:	c3                   	ret    
