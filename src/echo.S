@@ -2,14 +2,10 @@
     .global main
     .type main, @function
 main:
-    push %rbp               // Save RBP
-    mov %rsp, %rbp          // Init RBP
-    sub $0x10, %rsp
-    mov %rsi, -0x10(%rbp)   // *[RBP - 16] = RSI
-    mov -0x10(%rbp), %rax   // RAX = *[RBP - 16]
-    mov 0x8(%rax), %rax     // RAX = *[RAX + 8]
-    mov %rax, %rdi          // RDI = RAX
+    push %rbp               // Function prologue
+    mov %rsp, %rbp
+    mov 0x8(%rsi), %rdi     // RDI = *[RSI + 8] (argv[1])
     call puts               // puts(argv[1])
     xor %eax, %eax          // Return value = 0
-    leave                   // Restore RBP
+    leave                   // Function epilogue
     ret
