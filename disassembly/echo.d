@@ -108,16 +108,27 @@ Disassembly of section .text:
 0000000000001139 <main>:
     1139:	55                   	push   %rbp
     113a:	48 89 e5             	mov    %rsp,%rbp
-    113d:	48 8b 7e 08          	mov    0x8(%rsi),%rdi
-    1141:	e8 ea fe ff ff       	call   1030 <puts@plt>
-    1146:	31 c0                	xor    %eax,%eax
-    1148:	c9                   	leave  
-    1149:	c3                   	ret    
+    113d:	90                   	nop
+    113e:	48 ff cf             	dec    %rdi
+    1141:	74 0e                	je     1151 <main+0x18>
+    1143:	90                   	nop
+    1144:	90                   	nop
+    1145:	48 8b 7e 08          	mov    0x8(%rsi),%rdi
+    1149:	90                   	nop
+    114a:	e8 e1 fe ff ff       	call   1030 <puts@plt>
+    114f:	90                   	nop
+    1150:	90                   	nop
+    1151:	90                   	nop
+    1152:	90                   	nop
+    1153:	90                   	nop
+    1154:	31 c0                	xor    %eax,%eax
+    1156:	c9                   	leave  
+    1157:	c3                   	ret    
 
 Disassembly of section .fini:
 
-000000000000114c <_fini>:
-    114c:	f3 0f 1e fa          	endbr64 
-    1150:	48 83 ec 08          	sub    $0x8,%rsp
-    1154:	48 83 c4 08          	add    $0x8,%rsp
-    1158:	c3                   	ret    
+0000000000001158 <_fini>:
+    1158:	f3 0f 1e fa          	endbr64 
+    115c:	48 83 ec 08          	sub    $0x8,%rsp
+    1160:	48 83 c4 08          	add    $0x8,%rsp
+    1164:	c3                   	ret    
