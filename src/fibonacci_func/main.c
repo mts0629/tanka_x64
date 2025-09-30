@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 8
-
 void fibonacci(int num, int *array);
 
 int main(int argc, char *argv[]) {
