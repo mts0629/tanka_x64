@@ -22,6 +22,7 @@ Souce files are in `src/`.
     - `$ echo <string>`
 - `loop.S`: print "hey" in the loop for the number of commandline argument (`argc`)
     - `$ loop <any arguments> ...`
+- `shell.S`: launch `/bin/sh`
 - `waka.S`: print "Waka"
 - `wakayama.S`: print "Wakayama"
 
