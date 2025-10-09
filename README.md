@@ -23,6 +23,8 @@ Souce files are in `src/`.
 - `loop.S`: print "hey" in the loop for the number of commandline argument (`argc`)
     - `$ loop <any arguments> ...`
 - `shell.S`: launch `/bin/sh`
+- `cmd.S`: run specific command
+    - `$ cmd <abs/path/to/command>`
 - `waka.S`: print "Waka"
 - `wakayama.S`: print "Wakayama"
 
