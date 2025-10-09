@@ -102,27 +102,18 @@ Disassembly of section .text:
 
 0000000000001129 <main>:
     1129:	48 ff cf             	dec    %rdi
-    112c:	74 0e                	je     113c <main+0x13>
+    112c:	74 0b                	je     1139 <main+0x10>
     112e:	48 8b 7e 08          	mov    0x8(%rsi),%rdi
-    1132:	31 d2                	xor    %edx,%edx
-    1134:	90                   	nop
-    1135:	31 f6                	xor    %esi,%esi
-    1137:	6a 3b                	push   $0x3b
-    1139:	58                   	pop    %rax
-    113a:	0f 05                	syscall 
-    113c:	b8 00 00 00 00       	mov    $0x0,%eax
-    1141:	90                   	nop
-    1142:	90                   	nop
-    1143:	90                   	nop
-    1144:	90                   	nop
-    1145:	90                   	nop
-    1146:	90                   	nop
-    1147:	c3                   	ret    
+    1132:	6a 3b                	push   $0x3b
+    1134:	58                   	pop    %rax
+    1135:	31 d2                	xor    %edx,%edx
+    1137:	0f 05                	syscall 
+    1139:	c3                   	ret    
 
 Disassembly of section .fini:
 
-0000000000001148 <_fini>:
-    1148:	f3 0f 1e fa          	endbr64 
-    114c:	48 83 ec 08          	sub    $0x8,%rsp
-    1150:	48 83 c4 08          	add    $0x8,%rsp
-    1154:	c3                   	ret    
+000000000000113c <_fini>:
+    113c:	f3 0f 1e fa          	endbr64 
+    1140:	48 83 ec 08          	sub    $0x8,%rsp
+    1144:	48 83 c4 08          	add    $0x8,%rsp
+    1148:	c3                   	ret    
