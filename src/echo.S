@@ -6,19 +6,18 @@ main:
     mov %rsp, %rbp
     nop
 
-    dec %rdi
-    jz 1f               // If RDI (argc) == 1, skip
+    dec %rdi            // argc--
+    jz 1f               // If argc = 0, break
     nop; nop
 
-                        // Otherwise
-    mov 0x8(%rsi), %rdi // RDI = *[RSI + 8] (argv[1])
+    mov 0x8(%rsi), %rdi // %RDI = *[%RSI + 8] (argv[1])
     nop
 
-    call puts           // puts(argv[1])
+    call puts           // Call puts(argv[1])
     nop; nop
 
 1:
     nop; nop; nop
-    xor %eax, %eax      // Return value = 0
+    xor %eax, %eax      // Return 0
     leave               // Function epilogue
     ret

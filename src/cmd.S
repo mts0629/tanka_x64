@@ -3,7 +3,7 @@
     .type main, @function
 main:
     dec %rdi
-    jz 1f       // If no argument, quit
+    jz 1f               // If no argument, quit
     mov 0x8(%rsi), %rdi // Get argv[1]
 
     push $59
