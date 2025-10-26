@@ -22,6 +22,8 @@ Souce files are in `src/`.
     - `$ echo <string>`
 - `loop.S`: print "hey" in the loop for the number of commandline argument (`argc`)
     - `$ loop <any arguments> ...`
+- `quine.S`: machine code quine
+    - `$ quine > quine.out; hd quine.out`: see hexadecimal dump
 - `shell.S`: launch `/bin/sh`
 - `cmd.S`: run specific command (5-7-5)
     - `$ cmd <full/path/to/command> <arguments> ...`
